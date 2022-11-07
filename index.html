@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="data.js">
+    <link rel="stylesheet" href="info_joueur.js">
+    <link rel="icon" type="image/png" href="img/logo_psg.png">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="d3.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https : //fonts.googleapis.com/css2?family= Roboto :wght@300 & display=swap" rel="stylesheet">
+
+    <title>DataViz</title>
+
+
+    <style>
+        body{
+            margin: 0;
+        }
+
+        .axe{
+            stroke: rgb(255, 255, 255);
+            stroke-width: 5;
+        }
+
+        #arow {
+            fill: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+</head>
+<body>
+
+    <div class="page1">
+        <img class="imageBackgroundCover__img no-src u-blur-up lazyloaded" data-src="https://images.psg.media/media/148084/hero-header-template-first-team-23.jpg?center=0.5,0.5&amp;mode=crop&amp;width=600&amp;height=300&amp;quality=60 600w" data-srcset="https://images.psg.media/media/148084/hero-header-template-first-team-23.jpg?center=0.5,0.5&amp;mode=crop&amp;width=1200&amp;height=600&amp;quality=75 1200w,
+        https://images.psg.media/media/148084/hero-header-template-first-team-23.jpg?center=0.5,0.5&amp;mode=crop&amp;width=1600&amp;height=800&amp;quality=80 1600w,
+        https://images.psg.media/media/148084/hero-header-template-first-team-23.jpg?center=0.5,0.5&amp;mode=crop&amp;width=2000&amp;height=1000&amp;quality=80 2000w" alt="First team 21/22" srcset="https://images.psg.media/media/148084/hero-header-template-first-team-23.jpg?center=0.5,0.5&amp;mode=crop&amp;width=1200&amp;height=600&amp;quality=75 1200w,
+        https://images.psg.media/media/148084/hero-header-template-first-team-23.jpg?center=0.5,0.5&amp;mode=crop&amp;width=1600&amp;height=800&amp;quality=80 1600w,
+        https://images.psg.media/media/148084/hero-header-template-first-team-23.jpg?center=0.5,0.5&amp;mode=crop&amp;width=2000&amp;height=1000&amp;quality=80 2000w" src="https://images.psg.media/media/148084/hero-header-template-first-team-23.jpg?center=0.5,0.5&amp;mode=crop&amp;width=600&amp;height=300&amp;quality=60 600w">
+
+        
+      
+        <svg class="arrows">
+            <path class="a1" d="M0 0 L30 32 L60 0"></path>
+            <path class="a2" d="M0 20 L30 52 L60 20"></path>
+            <path class="a3" d="M0 40 L30 72 L60 40"></path>
+        </svg>
+
+        
+    </div>
+
+    <div class="page2">
+        <h1 class="titre">L’évolution des joueurs du PSG.</h1>
+        <a class="button button1" href="#popup01">En savoir plus...</a>
+
+        <div id="popup01" class="overlay">
+            <div class="popup popup1">
+              <a class="close" href="#">&times;</a>
+              <div class="contenu1">
+                <p class="description">
+                    Notre idée pour le projet Dataviz est de rassembler sur un graphique le nombre de trophées obtenus par les joueurs actuels de l'équipe première du PSG. <br><br>
+
+                    Vous avez le choix de voir le nombre total de trophées depuis le début de leur carrière et le nombre total de trophées depuis leur arrivée au PSG. <br><br>
+
+                    Bonne lecture. 
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+  
+
+
+
+        <!-- view-source:https://igm.univ-mlv.fr/~bulteau/mmi/d3-demo/tampons-5%20(choix)/demo-tampons.html -->
+
+
+
+
+
+
+
+
+        <!-- svg graphique -->
+
+        <select id="forme-select" class="choix">
+            <option value="Trophé total">Le nombre de trophé total</option>
+            <option value="Trophé PSG">Le nombre de trophé au sein de l'équipe</option>
+        </select>
+
+    
+        <svg class="svg1" width="99vmin" height="54vmin" viewBox="-50 -300 1100 600" >   
+
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5"
+                        markerWidth="3" markerHeight="3" orient="auto" fill="#ffff" >
+                        <path d="M 0 0 L 10 5 L 0 10 z" />
+                </marker>
+            </defs>
+            
+            <!-- <rect x="0" y="-250" width="1000" height="500" fill="#00274e" /> -->
+
+            <g id="dessin"> </g>
+                    
+            <line class="axe" x1="0" y1="250" x2="1000" y2="250"  > </line>
+            <line class="axe" x1="0" y1="252" x2="0" y2="-260" marker-end="url(#arrow)"  > </line>
+
+        </svg>
+        
+        <div class="liste">
+            <div class="liste1">
+                <li><strong>(0→1)</strong> Hugo Ekitike</li>
+                <li><strong>(1→2)</strong> Nordi Mukiele</li>
+                <li><strong>(2→3)</strong> Fabián Ruiz</li>
+                <li><strong>(3→4)</strong> Renato Sanches</li>
+                <li><strong>(4→5)</strong> Carlos Soler</li>
+                <li><strong>(5→6)</strong> Vitinha</li>
+                <li><strong>(6→7)</strong> Gianluigi Donnarumma</li>
+                <li><strong>(7→8)</strong> Achraf Hakimi</li>
+                <li><strong>(8→9)</strong> Nuno Mendes</li>
+                <li><strong>(9→10)</strong> Lionel Messi</li>
+                <li><strong>(10→11)</strong> Sergio Ramos</li>
+            </div>
+
+            <div class="liste2">
+                <li><strong>(11→12)</strong> Alexandre Letellier</li>
+                <li><strong>(12→13)</strong> Danilo Pereira</li>
+                <li><strong>(13→14)</strong> Keylor Navas</li>
+                <li><strong>(14→15)</strong> Sergio Rico</li>
+                <li><strong>(15→16)</strong> Pablo Sarabia</li>
+                <li><strong>(16→17)</strong> Juan Bernat</li>
+                <li><strong>(17→18)</strong> Kylian Mbappé</li>
+                <li><strong>(18→19)</strong> Neymar</li>
+                <li><strong>(19→20)</strong> Presnel Kimpembe</li>
+                <li><strong>(20→21)</strong> Marquinhos</li>
+                <li><strong>(21→22)</strong> Marco Verratti</li>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="page3">
+
+        <img src="img/logo_psg.png" alt="logo du paris saint germain" class="logo_page3">
+
+        <h2>Souvenirs mémorables</h2>
+
+        <div class="video">
+            <div class="widget">
+                <iframe 
+                    width="460"
+                    height="215" src="https://www.youtube.com/embed/uBASoyCDJCc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </iframe>
+
+                <iframe 
+                    width="460"
+                    height="215" src="https://www.youtube.com/embed/Q85UYLAvAuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe 
+                    width="460" 
+                    height="215" src="https://www.youtube.com/embed/5iKOTUQo_6M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe 
+                    width="460"
+                    height="215" src="https://www.youtube.com/embed/ygPrK0Tz3N0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe 
+                    width="460"
+                    height="215" src="https://www.youtube.com/embed/r_egUAyHJok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe 
+                    width="460"
+                    height="215" src="https://www.youtube.com/embed/8gUCR89H5YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>   
+
+        <a class="botton botton1" href="#popo01">Mention Légales</a>
+
+        <div class="overlay" id="popo01">
+            <div class="popo popo1">
+              <a class="close" href="#">&times;</a>
+              <div class="content">
+                <h1> Mentions Légales</h1>
+                <p>Informations Dévellopeur : Projet SAÉ 303 réalisé par Alvin Mirenda, Martin Chambaudry, Loïc Priso  <br> 2 rue Albert Einstein, 77420
+                  Champs-sur-Marne, France <br>
+                  <br> Informations hébergeur : <br> Identité : Université Gustave Eiffel <br> Adresse : 2 rue Albert
+                  Einstein, 77420 Champs-sur-Marne, France <br> Téléphone : 01 60 95 75 00 <br> Adresse mail :
+                  webmaster@univ-eiffel.fr <br> Conformément
+                  à l'article 15 du Règlement général sur la protection des données (RGPD) du 27 avril 2016, vous disposez
+                  d'un droit d'accès aux informations vous concernant. Si vous trouvez que ces informations sont incorrectes,
+                  l'article. <br> 16 du
+                  RGPD vous permet de les modifier ou de les supprimer. Dans ce cas, merci de contacter le Directeur de la
+                  Communication : com@univ-eiffel.fr. <br> Pour toute question relative à la collecte ou au traitement de vos
+                  données personnelles par
+                  le site web, vous pouvez contacter le respnsable de la protection des données du projet :
+                  philippe.gambette@univ-eiffel.fr. <br> Les fichiers détenus par l'Université Gustave Eiffel et Philippe
+                  Gambette qui comportent des données à caractère
+                  personnel ne seront jamais transmis à des tiers et ne feront jamais l'objet d'une commercialisation. <br>
+                  Lors de la création de votre propre analogie, vos informations seront envoyées dans une base de données.
+                  Pour les supprimer veuillez
+                  contacter philippe.gambette@univ-eiffel.fr. Les données seront supprimées durant l’été qui suivra de janvier
+                  2022. <br><br>
+                  Crédit : <br>
+                  Logo PSG : PSG.fr <br>
+                  Photo d’accueil : Récupérer sur le site officiel du PSG. <br>
+                  PSG.fr <br>
+                  Flèche sens de lecture : CodePen.io
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+    <script src="data.js" ></script></body>
+    <script src="info_joueur.js" ></script></body>
+
+</body>
+</html>

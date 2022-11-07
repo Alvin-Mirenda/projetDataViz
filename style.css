@@ -1,0 +1,547 @@
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    font-family:'Roboto';
+    color: #ffffff;
+    overflow-x: hidden;
+    background-color:   #0a1324;
+
+}
+
+
+
+/* --------------------------------- */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #fffeff;
+  border-radius: 4px;
+  height: 100px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #0a1324;
+}
+
+/* Les différentes pages----------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.page1{
+    background-color:   #0a1324;
+    width: auto;
+    height: 110vh;
+}
+
+
+
+.page2{
+    width: auto;
+    /* height: 125vh; */
+    background-color:   #0a1324;
+    padding: left 6em; ;
+}
+
+.page3{
+  background-color:   #0a1324;
+  width: auto;
+  height: 100vh;
+}
+
+
+.svg1{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.svg2{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4em;
+}
+
+
+@media screen and (max-width: 900px){
+  .page1{
+    background-color:   #0a1324;
+    width: auto;
+    height: 67vh;
+}
+
+}
+
+@media screen and (max-width: 1120px){
+  .page1{
+    background-color:   #0a1324;
+    width: auto;
+    height: 82vh;
+}
+
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+h1{
+    text-align: center;
+    margin: 0;
+}
+
+h2{
+  font-size: 3em;
+  text-align: center;
+  margin: 0;
+}
+
+h3{
+  font-size: 1.5em;
+}
+
+
+.titre{
+    font-size:3.5em;
+    text-decoration : underline;
+}
+
+.logo_page3{
+  width: 6em;
+  height: auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 8em;
+  margin-bottom: 1.5em;
+}
+
+.choix{
+  color: #ffffff;
+  background-color:   #0a1324;
+  border-radius: 0.4em;
+  text-align: center;
+  padding: 0.5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+  margin-bottom: 0;
+}
+
+ iframe{
+  margin: 0.2em;
+}
+
+
+@media screen and (max-width: 1000px){
+  .titre{
+    font-size: 2.25em;
+}
+h2{
+  font-size: 2em;
+}
+h3{
+  font-size: 1em;
+}
+
+}
+
+/* liste joueurs-------------------------------------------------------------------------------------------------- */
+
+li{
+  list-style-type: none;
+}
+
+.liste{
+  /* border: solid;
+  border-color: red; */
+  margin-left: 29em;
+  margin-top: 1.25em;
+  display: flex;
+}
+
+.liste1{
+  /* border: solid;
+  border-color: red; */
+  width: 16em;
+}
+
+.liste2{
+  /* border: solid;
+  border-color: red; */
+  width: 20em;
+} 
+
+
+@media screen and (max-width: 1170px){
+  .liste{
+    margin-left: 23em;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .liste{
+    margin-left: 14em;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 700px){
+  .liste{
+    margin-left: 8em;
+    display: flex;
+  }
+}
+
+/* souvenir mémorable------------------------------------------------------------------------------------------------------------------ */
+
+.video{
+  margin-left: 15em;
+
+}
+
+/*  popup ------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.button {
+    border: 0.05em solid #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    color: #ffffff;
+    text-align: center;
+    background: linear-gradient(
+      60deg,
+      transparent 50%,
+      #5f3187 100%
+    );
+    background-size: 64vh;
+    cursor: pointer;
+    background-position: 0 0;
+    -webkit-transition: background-position 1.5s, color 1s;
+    width: 15vw;
+    padding: 0.5em 0.1em;
+    border-radius: 0.6em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+  }
+  
+  
+  .button1 {
+    left: 40vw;
+  }
+  
+  .button:hover {
+    background-position: 100% 0;
+  }
+  
+  /*FOND NOIR QUAND ON CLIQUE*/
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(10, 19, 36, 0.85);
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /*POP UP*/
+  
+  .popup {
+    padding: 1vh;
+    height: 50vh;
+    -webkit-transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out;
+    z-index: 1;
+    border-radius: 5px;
+  }
+  
+  .popup1 {
+    top: 11.11em;
+    left: 15%;
+    background-color: #1a2a46;
+    width: 1000px;
+    margin: auto;
+    position: fixed;
+
+    }
+  
+  .popup .close {
+    position: absolute;
+    top: 0.5vh;
+    transition: all 0.5s;
+    font-size: 7vh;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    margin-left:0.75em ;
+    margin-top: 0.25em;
+  }
+  
+  .popup .close:hover {
+    transform: rotate(90deg);
+    transition: 0.5s;
+    color: #ffffff;
+  }
+  
+  .popup .contenu1 {
+    font-size: 19px;
+    color: #ffffff;
+    margin-top: 13vh;
+    margin-left: 3vw;
+  }
+
+  @media screen and (max-width: 1240px){
+    .popup1 {
+      top: 11.11em;
+      left: 15%;
+      background-color: #1a2a46;
+      width: 707px;
+      margin: auto;
+      position: fixed;
+  }
+
+  .popup .contenu1 {
+    font-size: 1em;
+    color: #ffffff;
+    margin-top: 15vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+  }
+
+/* fleche pour le sens de la lecture ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.arrows {
+  width: 200px;
+  height: 72px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: 20px;
+}
+
+.arrows path {
+  stroke: #2994D1;
+  fill: transparent;
+  stroke-width: 2px;	
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+  animation-delay:-1s;
+  -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+  animation-delay:-0.5s;
+  -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {	
+  animation-delay:0s;
+  -webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+
+@media screen and (max-width: 1300px){
+  .arrows {
+    width: 200px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 200px;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .arrows {
+    width: 200px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 340px;
+
+  }
+}
+/*mention légal ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.botton {
+  margin: 15px;
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  top: 48%;
+  top: 95vh;
+  color: #fff;
+  transition: 0.7s;
+  user-select: none;
+}
+
+.botton:hover {
+  color: #acacac56;
+  filter: blur(1px);
+  transition: 0.7s;
+}
+.volet h1 {
+  font-size: 2rem;
+}
+
+.volet p {
+  font-size: 1rem;
+}
+
+.popo {
+  top: 4em;
+  left: 15%;
+  background-color: #1a2a46;
+  color: #ffffff;
+  border-radius: 25px;
+  width: 60em;
+  height: 30em;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.popo01 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  height: 90vh;
+  width: 70%;
+  transition: all 0.4s ease-out;
+  opacity: 0;
+}
+
+.popo .close {
+  position: absolute;
+  top: 0.5vh;
+  transition: all 0.5s;
+  font-size: 7vh;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  margin-left:0.75em ;
+  margin-top: 0.25em;
+}
+
+.popo .close:hover {
+  transform: rotate(90deg);
+  transition: 0.5s;
+  color: #ffffff;
+}
+
+.popo .content {
+  max-height: 70vh;
+  overflow: auto;
+  margin: 2em;
+  padding-top: 2em;
+  
+}
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(58, 53, 86, 0.76);
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+
+  @media screen and (max-width: 1120px){
+
+    .popo {
+      top: 4em;
+      left: 7%;
+      background-color: #1a2a46;
+      color: #ffffff;
+      border-radius: 25px;
+      width: 60em;
+      height: 30em;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+    }
+    }
+
+  @media screen and (max-width: 900px){
+    .popo {
+      top: 2em;
+      left: 7%;
+      background-color: #1a2a46;
+      color: #ffffff;
+      border-radius: 25px;
+      width: 48em;
+      height: 35em;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+  }
+
+  .popo .content {
+    max-height: 78vh;
+    overflow: auto;
+    margin: 2em;
+    padding-top: 2em;
+  }
+    }
+
+  
+  @media screen and (max-width: 750px){
+    .popo {
+      top: 2em;
+      left: 7%;
+      background-color: #1a2a46;
+      color: #ffffff;
+      border-radius: 25px;
+      width: 36em;
+      height: 35em;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+  }
+    }
